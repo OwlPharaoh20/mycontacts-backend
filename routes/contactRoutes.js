@@ -14,27 +14,12 @@ const {getContacts,
 
 // Define a route for the root URL ("/")
 // This route will handle HTTP GET requests
-router.route("/").get(getContacts);
+router.route("/").get(getContacts).post(createContact);
 
-// Define a route for the root URL ("/")
-// This route will handle HTTP POST requests
-router.route("/").post(createContact);
 
 // Define a route for a URL with an ID parameter (e.g. "/123")
 // This route will handle HTTP GET requests
-router.route("/:id").get(getContact);
-
-
-
-// Define a route for a URL with an ID parameter (e.g. "/123")
-// This route will handle HTTP PUT requests
-router.route("/:id").put(updateContact);
-
-
-// Define a route for a URL with an ID parameter (e.g. "/123")
-// This route will handle HTTP DELETE requests
-router.route("/:id").delete(deleteContact);
-
+router.route("/:id").get(getContact).put(updateContact).delete(deleteContact);
 
 
 
