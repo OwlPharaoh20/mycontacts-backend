@@ -11,7 +11,10 @@ const {getContacts,
      updateContact, 
      deleteContact 
     } = require("../controllers/contactController");
+const validateToken = require("../middleware/validateTokenHandler");
 
+
+router.use(validateToken);
 // Define a route for the root URL ("/")
 // This route will handle HTTP GET requests
 router.route("/").get(getContacts).post(createContact);
